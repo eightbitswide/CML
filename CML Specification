@@ -1,0 +1,13 @@
+Stage 1: Initial CML Text Specifications
+
+<FC#>       0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F     POKE 646,# 
+<FR>        Font reverse
+<FN>        Font Normal
+<CLS>       Clear screen                        print chr$(147)
+<SC#>       0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F     POKE 53281,#
+<BC#>       0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F     POKE 53280,#
+<BR>        Carriage Return                     PRINT
+<HL#={url}> 1,2,3,4,5,6,7,8,9                   Up to 9 URL hyperlinks
+
+
+
