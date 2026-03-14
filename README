@@ -25,7 +25,7 @@ tested and changes are implemented for testing.
 
 CML currently requires the "BASIC Programmer's Toolkit" enviroment, which must be loaded into memory before loading CML.  This will likely be changed in the future when routines for sound and spirte handling are added to the actual code.
 
-The "basic toolkit.prg" will provide you with the basic enviroment.  A full version with manual can be downloaded from http://www.gunstar.one/basictookit.zip
+The "toolkit basic.prg" file will provide you with the basic enviroment.  A full version with manual can be downloaded from http://www.gunstar.one/basictookit.zip
 
 
 
