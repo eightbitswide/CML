@@ -1,0 +1,27 @@
+Commodore Markup Language - CML
+
+CML is a decades old idea that the existing Internet could easily contain a secondary network
+specifically designed for Commodore 64 computers.  This network would provide access to the
+C64's SID and VIC chip with access to text colors, sprites and sounds.
+
+CML would be hidden within HTML remark code <!-- -->, allowing the code to exist inside
+of any normal webpage, but not be redendered on the screen of a modern computer.
+
+CML will use it's own CML or simple Commodore Markup Language. 
+
+The CML concept was first announed in 2004 on proboards forums.
+https://jledger.proboards.com/board/2/cml
+
+CML is currently back in developement for the Commodore 64 Ultimate computers which
+contain internal Swiftlink compatibility.
+
+CML is being based on the HTTP demo written by Chris Garrett.   
+This demo was first shown in the March 2026 Computer Gazette Publication.
+The code can also be downloaded from:
+https://github.com/omiq/c64-ultimate/blob/main/http-get.bas
+
+A CML test page is located at http://www.gunstar.one
+
+The entire CML project is in a state of flux as ideas and concepts are being
+tested and changes are implemented for testing.
+
