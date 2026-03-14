@@ -33,7 +33,7 @@ Current Workflow:  Using the Ultimate C64 or The new Commodore C64u:
 
 Recommended Configuration:
 ==========================
-Turbo Settings: U64 Turbo Registers
+Turbo Settings: U64 Turbo Registers (CML uses Turbo Modes)
 CPU Speed: 1 Mhz
 Command Line Interface: Enabled
 Enable Software IEC as #9
