@@ -1,11 +1,9 @@
 Commodore Markup Language - CML
 
-CML is a decades old idea that the existing Internet could easily contain a secondary network
-specifically designed for Commodore 64 computers.  This network would provide access to the
+CML is a decades old idea that the existing Internet could easily contain a secondary network specifically designed for Commodore 64 computers.  This network would provide access to the
 C64's SID and VIC chip with access to text colors, sprites and sounds.
 
-CML would be hidden within HTML remark code <!-- -->, allowing the code to exist inside
-of any normal webpage, but not be redendered on the screen of a modern computer.
+CML would be hidden within HTML remark code <!-- -->, allowing the code to exist inside of any normal webpage, but not be redendered on the screen of a modern computer.
 
 CML will use it's own CML or simple Commodore Markup Language. 
 
