@@ -23,7 +23,8 @@ A CML test page is located at http://www.gunstar.one
 The entire CML project is in a state of flux as ideas and concepts are being
 tested and changes are implemented for testing.
 
-CML currently requires the "BASIC Programmer's Toolkit" enviroment, which must be loaded into memory before loading CML.  This will likely be changed in the future when routines for sound and spirte handling are added to the actual code.
+As of 3/14/26 CML DOES NOT require Basic Programmer's Toolkit to run and will be perfectly happy in BASIC 2.0
+**CML currently requires the "BASIC Programmer's Toolkit" enviroment, which must be loaded into memory before loading CML.  This will likely be changed in the future when routines for sound and spirte handling are added to the actual code.
 
 The "toolkit basic.prg" file will provide you with the basic enviroment.  A full version with manual can be downloaded from https://www.gunstar.one/basictoolkit.zip
 
