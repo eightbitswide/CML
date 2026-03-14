@@ -1,4 +1,5 @@
 Commodore Markup Language - CML
+===============================
 
 CML is a decades old idea that the existing Internet could easily contain a secondary network specifically designed for Commodore 64 computers.  This network would provide access to the C64's SID and VIC chip with access to text colors, sprites and sounds.
 
@@ -14,7 +15,7 @@ contain internal Swiftlink compatibility.
 
 CML is being based on the HTTP demo written by Chris Garrett.   
 This demo was first shown in the March 2026 Computer Gazette Publication.
-The code can also be downloaded from:
+The original code can also be downloaded from:
 https://github.com/omiq/c64-ultimate/blob/main/http-get.bas
 
 A CML test page is located at http://www.gunstar.one
