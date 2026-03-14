@@ -29,3 +29,24 @@ The "toolkit basic.prg" file will provide you with the basic enviroment.  A full
 
 BASIC Programmer's Toolkit was chosen for this project for now due to it's easy access to sprites, sound, graphics, etc.  It also provides a number of great tools for development on the C64.
 
+Current Workflow:
+=================
+
+Using the Ultimate C64 or The new Commodore C64u:
+
+Recommended Configuration:
+==========================
+Turbo Settings: U64 Turbo Registers
+CPU Speed: 1 Mhz
+Command Line Interface: Enabled
+Enable Software IEC as #9
+
+LOADING AND RUNNING CML:
+========================
+Place the 'toolkit basic.prg' file in a folder with 'cml.prg'.
+Set Software IEC to the folder where these files are located. (F5, 'Set dir. here')
+LOAD "TOOLKIT BASIC",9,1
+RUN
+LOAD "CML",9
+RUN
+
