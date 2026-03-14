@@ -30,10 +30,11 @@ The "toolkit basic.prg" file will provide you with the basic enviroment.  A full
 BASIC Programmer's Toolkit was chosen for this project for now due to it's easy access to sprites, sound, graphics, etc.  It also provides a number of great tools for development on the C64.
 
 Current Workflow:  Using the Ultimate C64 or The new Commodore C64u:
+(Note: This software will run on an original C64 with swiftlink device at 1mhz speed)
 
 Recommended Configuration:
 ==========================
-Turbo Settings: U64 Turbo Registers (CML uses Turbo Modes)
+Turbo Settings: U64 Turbo Registers (CML uses Turbo Modes for faster parsing.)
 CPU Speed: 1 Mhz
 Command Line Interface: Enabled
 Enable Software IEC as #9
