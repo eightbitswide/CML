@@ -27,5 +27,5 @@ CML currently requires the "BASIC Programmer's Toolkit" enviroment, which must b
 
 The "toolkit basic.prg" file will provide you with the basic enviroment.  A full version with manual can be downloaded from https://www.gunstar.one/basictoolkit.zip
 
-
+BASIC Programmer's Toolkit was chosen for this project for now due to it's easy access to sprites, sound, graphics, etc.  It also provides a number of great tools for development on the C64.
 
