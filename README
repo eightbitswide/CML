@@ -13,7 +13,7 @@ https://jledger.proboards.com/board/2/cml
 CML is currently back in developement for the Commodore 64 Ultimate computers which
 contain internal Swiftlink compatibility.
 
-CML is being based on the HTTP demo written by Chris Garrett.   
+CML's core swiftlink code is based on the HTTP demo written by Chris Garrett.   
 This demo was first shown in the March 2026 Computer Gazette Publication.
 The original code can also be downloaded from:
 https://github.com/omiq/c64-ultimate/blob/main/http-get.bas
