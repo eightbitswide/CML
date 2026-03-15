@@ -20,9 +20,6 @@ https://github.com/omiq/c64-ultimate/blob/main/http-get.bas
 
 A CML test page is located at http://www.gunstar.one
 
-The entire CML project is in a state of flux as ideas and concepts are being
-tested and changes are implemented for testing.
-
 SPECIAL NOTE:
 CML DOES NOT require Basic Programmer's Toolkit to run and will be perfectly happy in BASIC 2.0.  I'm using Basic Programmer's Toolkit for development as it provides some very nice programming aids.
 
