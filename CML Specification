@@ -11,6 +11,8 @@ Stage 1 functions are complete.
 <TB#>       1,2,3,4,5,6,7,8,9,A,B,C,D,E,F       Set C64 Ultimate Turbo Speed
 <HL#={url}> 1,2,3,4,5,6,7,8,9                   Up to 9 URL hyperlinks
 
+Hyperlinks to pages are case sensative as the Commodore sends uppercase characters.  This may cause issues with some webservers, causing you to need to rename them PAGE.HTM file in uppercase.  See hyperlink example in the source code of https://www.gunstar.one. 
+
 Stage 2: Advanced CML Graphics Specifications
 State 2 functions are not complete.
 
