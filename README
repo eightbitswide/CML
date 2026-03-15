@@ -26,18 +26,18 @@ tested and changes are implemented for testing.
 SPECIAL NOTE:
 CML DOES NOT require Basic Programmer's Toolkit to run and will be perfectly happy in BASIC 2.0.  I'm using Basic Programmer's Toolkit for development as it provides some very nice programming aids.
 
-(Note: This software will run on an original C64 with swiftlink device at 1mhz speed)
-
 Recommended Configuration:
 ==========================
-Turbo Settings: U64 Turbo Registers (CML uses Turbo Modes for faster parsing.)
+Turbo Settings: U64 Turbo Registers   (CML uses Turbo Modes for faster parsing.)
 CPU Speed: 1 Mhz
 Command Line Interface: Enabled
 Enable Software IEC as #9
 
+Note: This software will run correct on a stock C64, howneit much slowly.
+
 LOADING AND RUNNING CML:
 ========================
-Place the 'toolkit basic.prg' file in a folder with 'cml.prg'.
+On the C64 Ultimate, place the cml.prg file into a folder.
 Set Software IEC to the folder where these files are located. (F5, 'Set dir. here')
 LOAD "CML",9
 RUN
