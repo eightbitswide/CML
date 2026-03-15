@@ -16,6 +16,7 @@
   108 ul$=a$
   109 if a$="" then ul$="gunstar.one"
   110 print chr$(147);chr$(5);"connecting.";:s=0:poke53297,15:tg$="":tt=0
+  115 gosub 6500 : rem split domain/page
   120 rem reset acia by writing to status register
   130 poke sr,0
   140 rem control register
@@ -29,14 +30,16 @@
   220 for i=1 to 500:next
   230 gosub 3000
   270 rem dial tcp server (ip:port)
-  280 ts$="atdt "+ul$+":80"+chr$(13)
+  280 ts$="atdt "+dm$+":80"+chr$(13)
   290 gosub 700
   291 rs$=""
   292 s=peek(sr): if (s and 8)=0 then goto 292
   293 c=peek(dr): rs$=rs$+chr$(c)
   294 if right$(rs$,7)<>"connect" and right$(rs$,7)<>"connect" then goto 292
   300 crlf$=chr$(13)+chr$(10)
-  310 ts$="get / http/1.1"+crlf$+"host: "+ul$+crlf$+crlf$
+  310 ts$="get /"+pg$+" http/1.1"+crlf$+"host: "+dm$+crlf$+crlf$
+  311 rem ts$="get / http/1.1"+crlf$+"host: "+dm$+crlf$+crlf$
+  312 rem print:print ts$:stop
   320 gosub 700
   325 ht=0: rem flag for if html started (1 = started, 0 = not started)
   330 s=peek(sr)
@@ -50,6 +53,7 @@
   364 s=peek(sr)
   366 if (s and 8)=0 then goto 364
   368 c=peek(dr)
+  369 rem print chr$(c);  : rem test line
   370 if c>=97 and c<=122 then c=c-32
   372 if c=asc("<") then rt=1 : goto 364
   374 if c=asc("!") and rt=1 then rt=2: goto 364
@@ -132,14 +136,14 @@
  5000 rem --------------------------
  5010 rem wait for user to pick link
  5020 rem --------------------------
- 5040 get a$
- 5050 if a$="" then goto 5040
- 5060 if a$="q" then end
- 5065 if a$="n" then goto 100
- 5070 ul$=hl$(val(a$))
+ 5040 get b$
+ 5050 if b$="" then goto 5040
+ 5060 if b$="q" then end
+ 5065 if b$="n" then goto 100
+ 5070 ul$=hl$(val(b$))
  5080 print chr$(147);:poke53281,0:poke53280,0
  5090 goto 110
- 6000 print chr$(147);
+ 6000 print chr$(147);chr$(142);
  6010 print chr$(153);"       commodore markup language"
  6020 print chr$(13);chr$(5);"            by: jeff ledger"
  6030 print : print
@@ -153,3 +157,14 @@
  6110 print:  print "or select provided links."
  6111 print : for x=1to12:print chr$(145);:next
  6200 return
+ 6500 rem -----------------------
+ 6510 rem find domain name & page
+ 6520 rem -----------------------
+ 6525 pg=0 : dm$="" : pg$=""
+ 6530 for x=1 to len(ul$)
+ 6540 z$=mid$(ul$,x,1)
+ 6550 if z$="/" then pg=1 : z$=""
+ 6560 if pg=0 then dm$=dm$+z$
+ 6570 if pg=1 then pg$=pg$+z$
+ 6580 next
+ 6590 return
