@@ -10,11 +10,12 @@
    80 cm=56834 :rem command register (parity, echo, dtr, interrupts)
    90 ct=56835 :rem control register (baud rate, word size, stop bits)
   100 rem clear screen
-  102 poke 53281,0:poke 53280,0:poke53297,15: rem turbo
-  104 print chr$(147);chr$(13);chr$(13)
-  106 rem input "url: http://";ul$
-  108 ul$="gunstar.one"
-  110 print chr$(147);chr$(5);"parsing for cml...";:s=0
+  102 poke 53281,0:poke 53280,0
+  104 gosub 6000
+  106 input "http://";a$
+  108 ul$=a$
+  109 if a$="" then ul$="gunstar.one"
+  110 print chr$(147);chr$(5);"connecting.";:s=0:poke53297,15:tg$="":tt=0
   120 rem reset acia by writing to status register
   130 poke sr,0
   140 rem control register
@@ -44,7 +45,7 @@
   345 if c<>10 and c<>13 then cr=0: goto 330
   350 cr=cr+1
   355 if cr<4 then goto 330
-  360 ht=1
+  360 ht=1:poke53297,15:rem turbo
   362 rt=0: rem search for <!-- tag
   364 s=peek(sr)
   366 if (s and 8)=0 then goto 364
@@ -92,7 +93,7 @@
  1010 rem process html tag in tg$
  1020 rem -----------------------
  1025 rem  print "*";tg$;"*"
- 1026 if tg$="/html" then print "eof" : gosub 3000: goto 5000
+ 1026 if tg$="/html" then print chr$(20)+chr$(20);: gosub 3000: goto 5000
  1040 if tg$="fr" then print chr$(18);:tg$="": return
  1042 if tg$="br" then print chr$(13);: tg$=".": return
  1050 if tg$="fn" then print chr$(156):tg$="": return
@@ -136,4 +137,19 @@
  5050 if a$="" then goto 5040
  5060 if a$="q" then end
  5070 ul$=hl$(val(a$))
- 5080 print "{clr}";:goto 110
+ 5080 print chr$(147);:poke53281,0:poke53280,0
+ 5090 goto 110
+ 6000 print chr$(147);
+ 6010 print chr$(153);"       commodore markup language"
+ 6020 print chr$(13);chr$(5);"            by: jeff ledger"
+ 6030 print : print
+ 6040 print chr$(154);"instructions:":print:print
+ 6050 print chr$(5);"type in a compatible address or"
+ 6060 print"[";chr$(154);"return";chr$(5);"] to load ";chr$(159);"www.gunstar.one"
+ 6070 for x=1to7 :print:next
+ 6080 print chr$(5);"at the end of page load:":print
+ 6090 print "press [";chr$(154);"q";chr$(5);"]uit to exit."
+ 6100 print "      [";chr$(154);"n";chr$(5);"]ew page."
+ 6110 print:  print "or select provided links."
+ 6111 print : for x=1to12:print chr$(145);:next
+ 6200 return
