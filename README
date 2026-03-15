@@ -24,14 +24,10 @@ The entire CML project is in a state of flux as ideas and concepts are being
 tested and changes are implemented for testing.
 
 NOTE: REGARDING NEXT PARAGRAH!
-As of 3/14/26 CML DOES NOT require Basic Programmer's Toolkit to run and will be perfectly happy in BASIC 2.0
+CML DOES NOT require Basic Programmer's Toolkit to run and will be perfectly happy in BASIC 2.0
 
-**CML currently requires the "BASIC Programmer's Toolkit" enviroment, which must be loaded into memory before loading CML.  This will likely be changed in the future when routines for sound and spirte handling are added to the actual code.
-The "toolkit basic.prg" file will provide you with the basic enviroment.  A full version with manual can be downloaded from https://www.gunstar.one/basictoolkit.zip
+I'm using Basic Programmer's Toolkit for development as it provides some very nice programming aids.
 
-BASIC Programmer's Toolkit was chosen for this project for now due to it's easy access to sprites, sound, graphics, etc.  It also provides a number of great tools for development on the C64.
-
-Current Workflow:  Using the Ultimate C64 or The new Commodore C64u:
 (Note: This software will run on an original C64 with swiftlink device at 1mhz speed)
 
 Recommended Configuration:
@@ -45,8 +41,6 @@ LOADING AND RUNNING CML:
 ========================
 Place the 'toolkit basic.prg' file in a folder with 'cml.prg'.
 Set Software IEC to the folder where these files are located. (F5, 'Set dir. here')
-LOAD "TOOLKIT BASIC",9,1    (Currently NOT REQUIRED)
-RUN                         (Currently NOT REQUIRED)
 LOAD "CML",9
 RUN
 
