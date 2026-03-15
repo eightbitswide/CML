@@ -16,3 +16,15 @@ State 2 functions are not complete.
 
 ....
 
+PETSCII.seq files are now supported with some minor preperation.
+
+Files must contain a header with:
+<html>
+<!--
+
+Files must contain a footer with:
+-->
+</html>
+
+This can be done in linux with the CAT command to combine header,petscii,footer files.
+Upload the files with .HTM extension for web server compatibility.
