@@ -13,11 +13,6 @@ https://jledger.proboards.com/board/2/cml
 CML is currently back in developement for the Commodore 64 Ultimate computers which
 contain internal Swiftlink compatibility.
 
-CML's core swiftlink code is based on the HTTP demo written by Chris Garrett.   
-This demo was first shown in the March 2026 Computer Gazette Publication.
-The original code can also be downloaded from:
-https://github.com/omiq/c64-ultimate/blob/main/http-get.bas
-
 A CML test page is located at http://www.gunstar.one
 
 SPECIAL NOTE:
@@ -30,12 +25,18 @@ CPU Speed: 1 Mhz
 Command Line Interface: Enabled
 Enable Software IEC as #9
 
-Note: This software will run correct on a stock C64.  Use the compiled version for a reasonable experience.
+Note: On a stock '80s C64 use the compiled version for best experience.
 
-LOADING AND RUNNING CML:
-========================
-On the C64 Ultimate, place the cml.prg file into a folder.
+LOADING AND RUNNING CML ON THE ULTIMATE C64 & C64U:
+===================================================
+On the C64 Ultimate, place the 'cml.prg' file into a folder.
 Set Software IEC to the folder where these files are located. (F5, 'Set dir. here')
 LOAD "CML",9
 RUN
 
+
+
+CML's core swiftlink code is based on the HTTP demo written by Chris Garrett.   
+This demo was first shown in the March 2026 Computer Gazette Publication.
+The original code can also be downloaded from:
+https://github.com/omiq/c64-ultimate/blob/main/http-get.bas
