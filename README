@@ -45,8 +45,8 @@ LOADING AND RUNNING CML:
 ========================
 Place the 'toolkit basic.prg' file in a folder with 'cml.prg'.
 Set Software IEC to the folder where these files are located. (F5, 'Set dir. here')
-LOAD "TOOLKIT BASIC",9,1
-RUN
+LOAD "TOOLKIT BASIC",9,1    (Currently NOT REQUIRED)
+RUN                         (Currently NOT REQUIRED)
 LOAD "CML",9
 RUN
 
