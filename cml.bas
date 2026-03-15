@@ -13,6 +13,7 @@
   102 poke 53281,0:poke 53280,0
   104 gosub 6000
   106 input "http://";a$
+  107 if a$="q" or a$="quit" then end
   108 ul$=a$
   109 if a$="" then ul$="gunstar.one"
   110 print chr$(147);chr$(5);"connecting.";:s=0:poke53297,15:tg$="":tt=0
@@ -106,7 +107,7 @@
  1060 if left$(tg$,2)="sc" then gosub 3300: poke53281,co:tg$="" : return
  1065 if left$(tg$,2)="fc" then gosub 3300: poke646,co : tg$="" : return
  1070 if left$(tg$,2)="hl" then gosub 3300: gosub3400 : tg$="" : return
- 1075 rem
+ 1075 if left$(tg$,2)="pk" then gosub 3300: gosub6600 : tg$="" : return
  1095 rem
  2000 tg$="": return
  3000 rem hangup
@@ -139,7 +140,7 @@
  5040 get b$
  5050 if b$="" then goto 5040
  5060 if b$="q" then end
- 5065 if b$="n" then goto 100
+ 5065 if b$="n" or b$=chr$(13) then ul$="gunstar.one": goto 100
  5070 ul$=hl$(val(b$))
  5080 print chr$(147);:poke53281,0:poke53280,0
  5090 goto 110
@@ -156,6 +157,7 @@
  6100 print "      [";chr$(154);"n";chr$(5);"]ew page."
  6110 print:  print "or select provided links."
  6111 print : for x=1to12:print chr$(145);:next
+ 6112 poke 53269,0 : rem turn off sprites
  6200 return
  6500 rem -----------------------
  6510 rem find domain name & page
@@ -168,3 +170,16 @@
  6570 if pg=1 then pg$=pg$+z$
  6580 next
  6590 return
+ 6600 rem --------------------
+ 6610 rem parse pokes and data
+ 6620 rem --------------------
+ 6630 pg=0:pk$="":dt$=""
+ 6635 for x=4 to len(tg$)
+ 6640 z$=mid$(tg$,x,1)
+ 6650 if z$="," then pg=1 : z$=""
+ 6660 if pg=0 then pk$=pk$+z$
+ 6670 if pg=1 then dt$=dt$+z$
+ 6680 next
+ 6690 rem print "poke ";pk$;",";dt$
+ 6695 poke val(pk$),val(dt$)
+ 6700 return
