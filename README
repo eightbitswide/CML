@@ -24,9 +24,7 @@ The entire CML project is in a state of flux as ideas and concepts are being
 tested and changes are implemented for testing.
 
 NOTE: REGARDING NEXT PARAGRAH!
-CML DOES NOT require Basic Programmer's Toolkit to run and will be perfectly happy in BASIC 2.0
-
-I'm using Basic Programmer's Toolkit for development as it provides some very nice programming aids.
+CML DOES NOT require Basic Programmer's Toolkit to run and will be perfectly happy in BASIC 2.0.  I'm using Basic Programmer's Toolkit for development as it provides some very nice programming aids.
 
 (Note: This software will run on an original C64 with swiftlink device at 1mhz speed)
 
