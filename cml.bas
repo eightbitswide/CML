@@ -132,10 +132,10 @@
  5000 rem --------------------------
  5010 rem wait for user to pick link
  5020 rem --------------------------
- 5030 if hl=0 then end
- 5040 if hl<>0 then get a$
+ 5040 get a$
  5050 if a$="" then goto 5040
  5060 if a$="q" then end
+ 5065 if a$="n" then goto 100
  5070 ul$=hl$(val(a$))
  5080 print chr$(147);:poke53281,0:poke53280,0
  5090 goto 110
