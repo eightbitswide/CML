@@ -20,7 +20,15 @@ Hyperlinks to pages are case sensative as the Commodore sends uppercase characte
 This may cause issues with some webservers, causing you to need to rename them PAGE.HTM file in uppercase.  
 See hyperlink example in the source code of https://www.gunstar.one. 
 
-....
+Currtently in development:
+==========================
+
+<mpk={address},{data},{data},{data},{data},{data},{data},{data},{data},{data},{data}>
+
+MPK will allow multiple data POKEs to be done, incrementing from a starting address.
+(The feature is working, but not yet added to the cml.prg release.)
+
+...
 
 PETSCII.seq files are now supported with some minor preperation.
 
