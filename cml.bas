@@ -10,7 +10,7 @@
    80 cm=56834 :rem command register (parity, echo, dtr, interrupts)
    90 ct=56835 :rem control register (baud rate, word size, stop bits)
   100 rem clear screen
-  102 poke 53281,0:poke 53280,0
+  102 poke 53281,0:poke 53280,0:a$=""
   104 gosub 6000
   106 input "http://";a$
   107 if a$="q" or a$="quit" then end
@@ -39,7 +39,6 @@
   294 if right$(rs$,7)<>"connect" and right$(rs$,7)<>"connect" then goto 292
   300 crlf$=chr$(13)+chr$(10)
   310 ts$="get /"+pg$+" http/1.1"+crlf$+"host: "+dm$+crlf$+crlf$
-  311 rem ts$="get / http/1.1"+crlf$+"host: "+dm$+crlf$+crlf$
   312 rem print:print ts$:stop
   320 gosub 700
   325 ht=0: rem flag for if html started (1 = started, 0 = not started)
@@ -61,7 +60,9 @@
   376 if c=asc("-") and rt=2 then rt=3: goto 364
   378 if c=asc("-") and rt=3 then rt=0: rt=0 : goto 400
   380 if c=13 then rt=0: goto 364 : rem remark not detected
-  382 print".";:goto 364
+  382 if pd=3 then print ".";:pd=0
+  383 pd=pd+1
+  385 goto 364
   400 print chr$(147);
   410 rem loop to read & process data
   420 rem -------------------------------
@@ -108,6 +109,7 @@
  1065 if left$(tg$,2)="fc" then gosub 3300: poke646,co : tg$="" : return
  1070 if left$(tg$,2)="hl" then gosub 3300: gosub3400 : tg$="" : return
  1075 if left$(tg$,2)="pk" then gosub 3300: gosub6600 : tg$="" : return
+ 1080 if left$(tg$,3)="mpk" then gosub 3300: gosub6800 : tg$="" : return
  1095 rem
  2000 tg$="": return
  3000 rem hangup
@@ -141,9 +143,9 @@
  5050 if b$="" then goto 5040
  5060 if b$="q" then end
  5065 if b$="n" or b$=chr$(13) then ul$="gunstar.one": goto 100
- 5070 ul$=hl$(val(b$))
- 5080 print chr$(147);:poke53281,0:poke53280,0
- 5090 goto 110
+ 5070 if val(b$)<10 then ul$=hl$(val(b$))
+ 5080 if val(b$)<10 then print chr$(147);:poke53281,0:poke53280,0 : goto 110
+ 5090 goto 5040
  6000 print chr$(147);chr$(142);
  6010 print chr$(153);"       commodore markup language"
  6020 print chr$(13);chr$(5);"            by: jeff ledger"
@@ -158,7 +160,7 @@
  6110 print:  print "or select provided links."
  6111 print : for x=1to12:print chr$(145);:next
  6112 poke 53269,0 : rem turn off sprites
- 6200 return
+ 6200 poke 53297,0:return
  6500 rem -----------------------
  6510 rem find domain name & page
  6520 rem -----------------------
@@ -183,3 +185,18 @@
  6690 rem print "poke ";pk$;",";dt$
  6695 poke val(pk$),val(dt$)
  6700 return
+ 6800 rem --------------------------
+ 6810 rem multidata poke command mpk
+ 6815 rem  tg$="mpk=12800,1,2,3,4,5,6,7,8"
+ 6820 rem --------------------------
+ 6830 pg=0:pk$="":dt$="":y=0
+ 6840 for x=5 to len(tg$)
+ 6850 z$=mid$(tg$,x,1)
+ 6860 if z$="," and pg=0 then pg=1 : z$="":y=y-1
+ 6865 if z$="," and pg=1 then pg=2 : z$="":y=y+1
+ 6870 if pg=0 then pk$=pk$+z$
+ 6880 if pg=1 then dt$=dt$+z$
+ 6885 if pg=2 then poke val(pk$)+y,val(dt$):dt$="":pg=1
+ 6900 next
+ 6905 poke val(pk$)+y+1,val(dt$)
+ 6910 return
