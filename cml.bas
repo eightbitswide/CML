@@ -3,7 +3,7 @@
    25 rem         by jeff ledger
    30 rem web fetch routines by c.garrett
    40 rem -------------------------------
-   45 dim hl$(9)
+   45 clr: dim hl$(9)
    50 tg$="":tt=0 :rem flag for tracking html tags (1 = inside tag, 0 = outside)
    60 dr=56832 :rem data register (read = receive, write = transmit)
    70 sr=56833 :rem status register (flags: rx ready, tx ready, errors)
@@ -16,7 +16,7 @@
   107 if a$="q" or a$="quit" then end
   108 ul$=a$
   109 if a$="" then ul$="gunstar.one"
-  110 print chr$(147);chr$(5);"connecting.";:s=0:poke53297,15:tg$="":tt=0
+  110 poke53269,0: print chr$(147);chr$(5);"connecting.";:s=0:poke53297,15:tg$="":tt=0
   115 gosub 6500 : rem split domain/page
   120 rem reset acia by writing to status register
   130 poke sr,0
@@ -35,7 +35,7 @@
   290 gosub 700
   291 rs$=""
   292 s=peek(sr): if (s and 8)=0 then goto 292
-  293 c=peek(dr): rs$=rs$+chr$(c)
+  293 c=peek(dr): if len(rs$)<255 then rs$=rs$+chr$(c)
   294 if right$(rs$,7)<>"connect" and right$(rs$,7)<>"connect" then goto 292
   300 crlf$=chr$(13)+chr$(10)
   310 ts$="get /"+pg$+" http/1.1"+crlf$+"host: "+dm$+crlf$+crlf$
@@ -187,7 +187,6 @@
  6700 return
  6800 rem --------------------------
  6810 rem multidata poke command mpk
- 6815 rem  tg$="mpk=12800,1,2,3,4,5,6,7,8"
  6820 rem --------------------------
  6830 pg=0:pk$="":dt$="":y=0
  6840 for x=5 to len(tg$)
